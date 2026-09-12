@@ -1,0 +1,64 @@
+﻿@{
+	ViewData["Title"] = "Thong tin";
+}
+<h2> Cú pháp Razor</h2>
+<!--Single statement blocks-->
+@{
+	var total = 7000;
+	var myMessage = "Biết người là trí, biết bản thân mới là trí truệ thật sự." +
+	"Thắng người là sự mạnh mẽ, thắng bản thân mới là sức mạnh thực sự";
+}
+<!--Inline ẽpressions-->
+<p>Tai khoan cua ban dang có: $ @total</p>
+<p>Cau noi de doi cua Lao Tu: @myMessage</p>
+
+<!--Multi-statement block-->
+@{
+	var greeting = "Chuc ban thanh cong!";
+	var weekDay = DateTime.Now.DayOfWeek;
+	var greetingMessage = greeting + " Hom nay la " + weekDay;
+}
+<p>Loi chuc: @greetingMessage</p>
+<h2>Cau truc IF...ELSE</h2>
+@if (total >= 5000)
+{
+	<p>Ban nam trong so 30% nhung nguoi giau nhat the gioi</p>
+}
+else if (total >= 2000)
+{
+	<p>ban ban trong so 50% nhung nguoi giau nhat the gioi</p>
+}
+else
+{
+	<p>Chua co so lieu thong ke </p>
+}
+@{
+	if (total % 2 == 0)
+	{
+		<p> so tien trong tai khoan cua ban la so chan</p>
+	}
+	else
+	{
+		<p>So tien trong tai khoan cua ban la so le</p>
+	}
+}
+<h2>cau truc lap</h2>
+@{
+	for (int i = 0; i < 10; i++)
+	{
+		if (i % 2 == 0)
+		{
+			<span class="btn btn-danger">@i</span>
+		}
+		else
+		{
+			<span class="btn btn-success">@i</span>
+		}
+	}
+	string[] images = { "icon1.jpg", "icon2.jpg", "icon3.jpg", "icon4.jpg", "icon5.jpg" };
+	<hr />
+	@foreach (var c in images)
+	{
+		<img src="/images/@c" width="100" />
+	}
+}

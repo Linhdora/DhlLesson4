@@ -1,0 +1,15 @@
+﻿@model IEnumerable<Dhlinh_leson4.Models.Book>
+@foreach (var item in Model)
+{
+    <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+        <div class="thumbnail">
+            <img src="@item.Image" alt="" style="width: 150px; height: 220px; object-fit: contain;">
+            <div class="caption">
+                <h3>@item.Title</h3>
+                <p>
+                    Price: @item.Price
+                </p>
+            </div>
+        </div>
+    </div>
+}
